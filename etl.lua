@@ -25,6 +25,7 @@ end
 
 function ETL_on_update()
 	if GetTime() - last_update > REFRESH_INTERVAL then
+		last_update = GetTime()
 		while ETL_xp_gains[1] and GetTime() - ETL_xp_gains[1].t > 3600 do
 			tremove(ETL_xp_gains)
 		end
